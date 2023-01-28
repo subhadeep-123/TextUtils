@@ -19,6 +19,10 @@ export default function TextForm(props) {
     setText(event.target.value);
   };
 
+  const fontStyle = {
+    fontFamily: ["Courier New", "monospace"],
+  };
+
   return (
     <>
       <div className="container">
@@ -55,7 +59,14 @@ export default function TextForm(props) {
           Minutes read
         </p>
       </div>
-      <div className="container">{text}</div>
+
+      <div
+        className="container my-3 pt-3 py-3 bg-dark text-white"
+        id="preview"
+        style={fontStyle}
+      >
+        {text}
+      </div>
     </>
   );
 }
