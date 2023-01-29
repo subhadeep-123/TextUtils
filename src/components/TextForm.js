@@ -60,12 +60,13 @@ export default function TextForm(props) {
       <div className="container my-5">
         <h3>Your text summary</h3>
         <p>
-          {text.split(" ")[0] === "" ? 0 : text.split(" ").length} words and{" "}
-          {text.length} characters
+          {text.trim().split(" ")[0] === "" ? 0 : text.trim().split(" ").length}{" "}
+          words and {text.trim().length} characters
         </p>
         <p>
-          {" "}
-          {text.split(" ")[0] === "" ? 0 : 0.008 * text.split(" ").length}{" "}
+          {text.trim().split(" ")[0] === ""
+            ? 0
+            : 0.008 * text.trim().split(" ").length}{" "}
           Minutes read
         </p>
       </div>
