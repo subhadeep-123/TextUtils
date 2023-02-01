@@ -45,7 +45,8 @@ function App() {
         />
         <Routes>
           <Route
-            exact path="/"
+            exact
+            path="/"
             element={
               <TextForm
                 heading="Enter the text to analyze below"
@@ -54,7 +55,7 @@ function App() {
               />
             }
           />
-          <Route exact path="about" element={<About />} />
+          <Route exact path="about" element={<About mode={mode} />} />
           <Route path="*" element={<NoPage />} />
         </Routes>
       </div>

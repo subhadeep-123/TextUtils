@@ -1,28 +1,17 @@
 import React, { useState } from "react";
 
-export default function About() {
-  const [myStyle, setMyStyle] = useState({
-    color: "white",
-    backgroundColor: "black",
-  });
-
-  const [btntext, setBtnText] = useState("Enable dark mode");
-
-  const toggleStyle = () => {
-    if (myStyle.color === "white") {
-      setMyStyle({ color: "black", backgroundColor: "white" });
-      setBtnText("Enable Dark mode");
-    } else {
-      setMyStyle({
-        color: "white",
-        backgroundColor: "black",
-      });
-      setBtnText("Enable Light Mode");
-    }
+export default function About(props) {
+  // const [myStyle, setMyStyle] = useState({});
+  let myStyle = {
+    color: props.mode === "dark" ? "white" : "#042743",
+    backgroundColor: props.mode === "dark" ? "rgb(36, 74, 104)" : "white",
   };
 
   return (
-    <div className="container" style={myStyle}>
+    <div
+      className="container"
+      style={{ color: props.mode === "dark" ? "white" : "#042743" }}
+    >
       <h2 className="my-3">About Us</h2>
       <div className="accordion" id="accordionFlushExample">
         <div className="accordion-item">
@@ -36,7 +25,7 @@ export default function About() {
               aria-expanded="false"
               aria-controls="flush-collapseOne"
             >
-              Accordion Item #1
+              <strong>Analyze your text</strong>
             </button>
           </h2>
           <div
@@ -47,9 +36,7 @@ export default function About() {
             data-bs-parent="#accordionFlushExample"
           >
             <div className="accordion-body">
-              Placeholder content for this accordion, which is intended to
-              demonstrate the <code>.accordion-flush</code> class. This is the
-              first item's accordion body.
+              Get all of the best features of text editing at your finger tips
             </div>
           </div>
         </div>
@@ -64,7 +51,7 @@ export default function About() {
               aria-expanded="false"
               aria-controls="flush-collapseTwo"
             >
-              Accordion Item #2
+              <strong>Free to use</strong>
             </button>
           </h2>
           <div
@@ -75,10 +62,7 @@ export default function About() {
             data-bs-parent="#accordionFlushExample"
           >
             <div className="accordion-body">
-              Placeholder content for this accordion, which is intended to
-              demonstrate the <code>.accordion-flush</code> class. This is the
-              second item's accordion body. Let's imagine this being filled with
-              some actual content.
+              This site is free to use for any of your needs
             </div>
           </div>
         </div>
@@ -93,7 +77,7 @@ export default function About() {
               aria-expanded="false"
               aria-controls="flush-collapseThree"
             >
-              Accordion Item #3
+              <strong>Browser Compatible</strong>
             </button>
           </h2>
           <div
@@ -104,19 +88,11 @@ export default function About() {
             data-bs-parent="#accordionFlushExample"
           >
             <div className="accordion-body">
-              Placeholder content for this accordion, which is intended to
-              demonstrate the <code>.accordion-flush</code> class. This is the
-              third item's accordion body. Nothing more exciting happening here
-              in terms of content, but just filling up the space to make it
-              look, at least at first glance, a bit more representative of how
-              this would look in a real-world application.
+              This website is browser compatible
             </div>
           </div>
         </div>
       </div>
-      <button className="btn btn-primary my-5 ms-5" onClick={toggleStyle}>
-        {btntext}
-      </button>
     </div>
   );
 }
