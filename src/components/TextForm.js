@@ -46,17 +46,23 @@ export default function TextForm(props) {
         ></textarea>
 
         <div className="my-3">
-          <button className="btn btn-success mx-1 my-1" onClick={handleUpClick}>
+          <button
+            className="btn btn-success mx-1 my-1"
+            disabled={text.length === 0}
+            onClick={handleUpClick}
+          >
             Uppercase
           </button>
           <button
             className="btn btn-success mx-1 my-1"
+            disabled={text.length === 0}
             onClick={handleLowClick}
           >
             Lower
           </button>
           <button
             className="btn btn-success float-end mx-1 my-1"
+            disabled={text.length === 0}
             onClick={clearBox}
           >
             Clear
@@ -87,7 +93,7 @@ export default function TextForm(props) {
           id="preview"
           style={fontStyle}
         >
-          {text.length > 0 ? text : "Enter something to preview it here..."}
+          {text.length > 0 ? text : "Nothing to preview it here..."}
         </div>
       </div>
     </>
