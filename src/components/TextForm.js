@@ -46,13 +46,19 @@ export default function TextForm(props) {
         ></textarea>
 
         <div className="my-3">
-          <button className="btn btn-success" onClick={handleUpClick}>
+          <button className="btn btn-success mx-1 my-1" onClick={handleUpClick}>
             Uppercase
           </button>
-          <button className="btn btn-success mx-1" onClick={handleLowClick}>
+          <button
+            className="btn btn-success mx-1 my-1"
+            onClick={handleLowClick}
+          >
             Lower
           </button>
-          <button className="btn btn-success float-end" onClick={clearBox}>
+          <button
+            className="btn btn-success float-end mx-1 my-1"
+            onClick={clearBox}
+          >
             Clear
           </button>
         </div>
