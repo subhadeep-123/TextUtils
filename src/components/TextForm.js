@@ -22,10 +22,14 @@ export default function TextForm(props) {
     setText(event.target.value);
   };
 
+  const handleCopy = () => {
+    navigator.clipboard.writeText(text)
+    props.showAlert("TextBox Copied to clipboard", "success");
+  };
+
   const fontStyle = {
     fontFamily: ["Courier New", "monospace"],
   };
-
   return (
     <>
       <div
@@ -59,6 +63,13 @@ export default function TextForm(props) {
             onClick={handleLowClick}
           >
             Lower
+          </button>
+          <button
+            className="btn btn-success mx-1 my-1"
+            disabled={text.length === 0}
+            onClick={handleCopy}
+          >
+            Copy
           </button>
           <button
             className="btn btn-success float-end mx-1 my-1"
